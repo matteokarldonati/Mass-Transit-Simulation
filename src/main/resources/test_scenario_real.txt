@@ -1,0 +1,43 @@
+add_stop,1,JOSEPH E LOWERY BLVD@BECKWITH ST SW,0,33.752636,-84.417759
+add_stop,2,JOSEPH E LOWERY BLVD@PARSONS ST SW,0,33.751251,-84.417762
+add_stop,3,JOSEPH E LOWERY BLVD@ASHBY GRV SW,0,33.750144,-84.417732
+add_stop,4,JOSEPH E LOWERY BLVD @ FAIR ST SW,0,33.749364,-84.417742
+add_stop,5,JOSEPH E LOWERY BLVD@WESTVIEW DR SW,0,33.746685,-84.417803
+add_stop,6,JOSEPH E LOWERY BLVD@SELLS AVE SW,0,33.745587,-84.417784
+add_stop,7,W END AVE SW @ ASHBY ST SW,0,33.744255,-84.416588
+add_stop,8,W END AVE SW @ WELLBORN ST SW,0,33.744304,-84.415499
+add_stop,9,W END AVE SW @ ASHBY ST SW,0,33.744724,-84.417207
+add_stop,10,JOSEPH E LOWERY BLVD @ ATLANTA STUDENT MOVEMENT BLVD,0,33.749024,-84.417337
+add_stop,11,JOSEPH E LOWERY BLVD@PARSONS ST SW,0,33.75063,-84.417277
+add_stop,12,JOSEPH E LOWERY BLVD@BECKWITH ST SW,0,33.752027,-84.417322
+add_stop,13,ATLANTA STUDENT MOVEMENT BLVD @ EUHRLEE ST SW,0,33.749264,-84.416015
+add_stop,14,ATLANTA STUDENT MOVEMENT BLVD @ OGDEN ST SW,0,33.749236,-84.416809
+add_route,51,1,Perimeter
+add_route,55,5,Scenic
+extend_route,51,1
+extend_route,51,2
+extend_route,51,7
+extend_route,51,4
+extend_route,51,5
+extend_route,51,6
+extend_route,51,7
+extend_route,55,8
+extend_route,55,9
+extend_route,55,10
+extend_route,55,4
+extend_route,55,12
+extend_route,55,13
+extend_route,55,14
+extend_route,55,13
+extend_route,55,12
+extend_route,55,4
+extend_route,55,10
+extend_route,55,9
+add_bus,60,51,0,2,15,20
+add_bus,61,51,3,4,15,40
+add_bus,63,55,0,3,15,20
+add_bus,64,55,4,8,15,40
+add_event,0,move_bus,60
+add_event,0,move_bus,61
+add_event,0,move_bus,63
+add_event,0,move_bus,64

@@ -1,0 +1,44 @@
+digraph G {
+  subgraph cluster1 {
+    stop0 [ label="stop#1 | 0 waiting", color="#00FF00"];
+    stop1 [ label="stop#2 | 0 waiting", color="#00FF00"];
+    stop2 [ label="stop#7 | 0 waiting", color="#00FF00"];
+    stop3 [ label="stop#4 | 0 waiting", color="#00FF00"];
+    stop4 [ label="stop#5 | 0 waiting", color="#00FF00"];
+    stop5 [ label="stop#6 | 0 waiting", color="#00FF00"];
+    stop6 [ label="stop#7 | 0 waiting", color="#00FF00"];
+    stop0 -> stop1;
+    stop1 -> stop2;
+    stop2 -> stop3;
+    stop3 -> stop4;
+    stop4 -> stop5;
+    stop5 -> stop6;
+    label = "Route #1";
+  }
+  subgraph cluster5 {
+    stop7 [ label="stop#8 | 0 waiting", color="#00FF00"];
+    stop8 [ label="stop#9 | 0 waiting", color="#00FF00"];
+    stop9 [ label="stop#10 | 0 waiting", color="#00FF00"];
+    stop10 [ label="stop#4 | 0 waiting", color="#00FF00"];
+    stop11 [ label="stop#12 | 11 waiting", color="#FF0000"];
+    stop12 [ label="stop#13 | 0 waiting", color="#00FF00"];
+    stop13 [ label="stop#14 | 0 waiting", color="#00FF00"];
+    stop14 [ label="stop#13 | 0 waiting", color="#00FF00"];
+    stop15 [ label="stop#12 | 11 waiting", color="#FF0000"];
+    stop16 [ label="stop#4 | 0 waiting", color="#00FF00"];
+    stop17 [ label="stop#10 | 0 waiting", color="#00FF00"];
+    stop18 [ label="stop#9 | 0 waiting", color="#00FF00"];
+    stop7 -> stop8;
+    stop8 -> stop9;
+    stop9 -> stop10;
+    stop10 -> stop11;
+    stop11 -> stop12;
+    stop12 -> stop13;
+    stop13 -> stop14;
+    stop14 -> stop15;
+    stop15 -> stop16;
+    stop16 -> stop17;
+    stop17 -> stop18;
+    label = "Route #5";
+  }
+}

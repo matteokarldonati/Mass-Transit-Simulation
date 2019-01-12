@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AnalysisWindow">
+    <top>
+        <AnchorPane prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_LEFT">
+            <children>
+                <GridPane layoutX="10.0" layoutY="6.0" prefHeight="45.0" prefWidth="580.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1290.0" minWidth="690.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Button fx:id="analysisButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #f5a816; -fx-border-color: #727272;" text="Analysis" textFill="WHITE" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                            <font>
+                                <Font name="Gadugi" size="16.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor></Button>
+                        <Button fx:id="simButton" alignment="CENTER" mnemonicParsing="false" onAction="#openSimScene" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Simulation" textFill="#727272" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                            <font>
+                                <Font name="Gadugi" size="16.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor></Button>
+                        <Button fx:id="editButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#openEditScene" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Edit" textFill="727272" GridPane.columnIndex="3">
+                            <font>
+                                <Font name="Ebrima" size="16.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor></Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Simulation Analysis">
+                            <font>
+                                <Font name="Gadugi Bold" size="25.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+            </children></AnchorPane>
+    </top>
+   <left>
+        <AnchorPane prefHeight="693.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="view" fitHeight="664.0" fitWidth="272.0" layoutX="453.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                <Image fx:id="png" url="@../../../../../../Downloads/MassTransitSimulator-master/src/main/resources/layout/output.png"> </Image>
+            </ImageView>
+            <GridPane layoutX="27.0" layoutY="25.0" prefHeight="234.0" prefWidth="400.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text text="Effectiveness Score: " GridPane.rowIndex="2">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                   <Text fx:id="effscore" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                       <font>
+                           <Font name="Gadugi" size="16.0" />
+                       </font>
+                   </Text>
+                  <Text text="Average # of People at a Stop:" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                   <Text fx:id="numWaiting" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                       <font>
+                           <Font name="Gadugi" size="16.0" />
+                       </font>
+                   </Text>
+                   <Button fx:id="updateAnalysis" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#ulysis" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Update" textFill="727272" GridPane.columnIndex="0">
+                       <font>
+                           <Font name="Ebrima" size="16.0" />
+                       </font>
+                       <cursor>
+                           <Cursor fx:constant="HAND" />
+                       </cursor></Button>
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+   </left>
+</BorderPane>

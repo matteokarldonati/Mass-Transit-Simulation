@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.lynden.gmapsfx.GoogleMapView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.SimWindow">
+   <top>
+      <AnchorPane prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <GridPane layoutX="10.0" layoutY="6.0" onMouseClicked="#updateDropDown" prefHeight="45.0" prefWidth="1269.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="74.0" prefWidth="74.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="222.0" prefWidth="222.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="74.0" prefWidth="74.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                   <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" onAction="#resetSimulation" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Reset" textFill="#727272" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                       <font>
+                           <Font name="Gadugi" size="16.0" />
+                       </font>
+                       <cursor>
+                           <Cursor fx:constant="HAND" />
+                       </cursor></Button>
+                   <Button fx:id="stepButton" alignment="CENTER" mnemonicParsing="false" onAction="#simulationStep" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Step" textFill="#727272" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                       <font>
+                           <Font name="Gadugi" size="16.0" />
+                       </font>
+                       <cursor>
+                           <Cursor fx:constant="HAND" />
+                       </cursor></Button>
+                   <Button fx:id="analysisButton" alignment="CENTER" mnemonicParsing="false" onAction="#openAnalysisScene" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Analysis" textFill="#727272" GridPane.columnIndex="9" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                       <font>
+                           <Font name="Gadugi" size="16.0" />
+                       </font>
+                       <cursor>
+                           <Cursor fx:constant="HAND" />
+                       </cursor></Button>
+                  <Button fx:id="simButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #f5a816; -fx-border-color: #727272;" text="Simulation" textFill="WHITE" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Gadugi" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="editButton" alignment="CENTER" mnemonicParsing="false" onAction="#openEditScene" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" text="Edit" textFill="#727272" GridPane.columnIndex="8">
+                     <font>
+                        <Font name="Ebrima" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ChoiceBox fx:id="routeSelect" onMouseEntered="#updateDropDown" prefHeight="41.0" prefWidth="222.0" style="-fx-background-color: #ffffff; -fx-border-color: #727272;" GridPane.columnIndex="5">
+                      <cursor>
+                        <Cursor fx:constant="HAND" />
+                      </cursor></ChoiceBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MARTA Bus Routes">
+                     <font>
+                        <Font name="Gadugi Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+   </top>
+   <bottom>
+       <AnchorPane prefHeight="Infinity" prefWidth="78.0" BorderPane.alignment="CENTER">
+           <children>
+               <GoogleMapView fx:id="mapView" layoutX="-311.0" layoutY="-244.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               <!--<TextField fx:id="fromTextField" prefHeight="27.0" prefWidth="222.0" promptText="From:" AnchorPane.leftAnchor="10.0" AnchorPane.bottomAnchor="10.0" />-->
+               <!--<TextField fx:id="toTextField" layoutX="10.0" layoutY="10.0" onAction="#toTextFieldAction" prefHeight="27.0" prefWidth="222.0" promptText="To:" AnchorPane.leftAnchor="10.0" AnchorPane.bottomAnchor="50.0" />-->
+               <!--<Button fx:id="clearButton" AnchorPane.leftAnchor="250.0" AnchorPane.bottomAnchor="10.0" mnemonicParsing="false" onAction="#clearDirections" text="Clear" />-->
+           </children>
+       </AnchorPane>
+   </bottom>
+</BorderPane>
